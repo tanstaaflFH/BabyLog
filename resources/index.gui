@@ -3,16 +3,26 @@
   <rect id="background" />
 
   //text
-  <text id="lblFeed" y="15%" class="defaultText label" fill="green">Last feed at:</text>
+  <text id="lblFeed" y="15%" class="defaultText label" fill="fb-green">Last feed at:</text>
   <text id="timeFeed" y="25%" class="defaultText data">12:45</text>
   <text id="elapsedFeed" y="35%" class="defaultText data">3h12min ago</text>
 
-  <text id="lblSleep" y="55%" class="defaultText label" fill="blue">Last sleep at:</text>
-  <text id="timeSleepStart" y="65%" class="defaultText data">12:45</text>
-  <text id="timeSleepEnd" y="75%" class="defaultText data">sleeping</text>
+  <text id="lblSleep" y="55%" class="defaultText label" fill="fb-blue">Last sleep at:</text>
+  <text id="timeSleepStart" y="65%" class="defaultText data">Start: 12:45</text>
+  <text id="timeSleepEnd" y="75%" class="defaultText data">End: still sleeping</text>
   <text id="elapsedSleep" y="85%" class="defaultText data">3h12min ago</text>
 
   //buttons
+  <use id="btn-tr" href="#combo-button-upper-right" fill="fb-green">
+    <set href="combo-button-icon" attributeName="href" to="icons/btn_combo_bottle.png"/>
+    <set href="combo-button-icon-press" attributeName="href" to="icons/btn_combo_bottle.png"/>
+    <set href="combo-button-stroke" attributeName="display" to="inline"/>
+  </use>
 
-  
+  <use id="btn-lr" href="#combo-button-lower-right" fill="fb-blue">
+    <set href="combo-button-icon" attributeName="href" to="icons/btn_combo_sleep.png"/>
+    <set href="combo-button-icon-press" attributeName="href" to="icons/btn_combo_sleep.png"/>
+    <set href="combo-button-stroke" attributeName="display" to="inline"/>
+  </use>
+
 </svg>
