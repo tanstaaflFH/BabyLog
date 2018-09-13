@@ -1,0 +1,18 @@
+<svg>
+  //background
+  <rect id="background" />
+
+  //text
+  <text id="lblFeed" y="15%" class="defaultText label" fill="green">Last feed at:</text>
+  <text id="timeFeed" y="25%" class="defaultText data">12:45</text>
+  <text id="elapsedFeed" y="35%" class="defaultText data">3h12min ago</text>
+
+  <text id="lblSleep" y="55%" class="defaultText label" fill="blue">Last sleep at:</text>
+  <text id="timeSleepStart" y="65%" class="defaultText data">12:45</text>
+  <text id="timeSleepEnd" y="75%" class="defaultText data">sleeping</text>
+  <text id="elapsedSleep" y="85%" class="defaultText data">3h12min ago</text>
+
+  //buttons
+
+  
+</svg>
