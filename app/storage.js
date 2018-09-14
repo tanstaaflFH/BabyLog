@@ -4,25 +4,38 @@
 
 import * as fs from "fs";
 
-const SETTINGS_TYPE = "cbor";
-const SETTINGS_FILE = "times.cbor";
+const SETTINGS_TYPE = "json";
+const SETTINGS_FILE = "times.txt";
 
 // Load settings from filesystem
 export function loadTimes() {
-  try {
-    return fs.readFileSync(SETTINGS_FILE, SETTINGS_TYPE);
+
+  let returnObject;
+
+  try { 
+    returnObject = JSON.parse(fs.readFileSync(SETTINGS_FILE, SETTINGS_TYPE));
+    returnObject.feed = new Date(returnObject.feed);
+    returnObject.sleepStart = new Date(returnObject.sleepStart);
+    returnObject.sleepEnd = new Date(returnObject.sleepEnd);
   } catch (ex) {
-    return {
-        feed: 0,
-        sleepStart: 0,
-        sleepEnd: 0
+    returnObject = {
+      feed: new Date(),
+      sleepStart: new Date(),
+      sleepEnd: new Date(),
+      sleeping: false
     };
+    console.log("file read error " + ex);
   }
+
+  return returnObject;
+
 }
 
 // Save settings to the filesystem
-export function saveTimes(settings) {
-  console.log("Received for saving: " + JSON.stringify(settings));
+export function saveTimes(inpTimes) {
+    
+  let jsonData = JSON.stringify(inpTimes);
+
+  fs.writeFileSync(SETTINGS_FILE, jsonData, SETTINGS_TYPE);
   
-    fs.writeFileSync(SETTINGS_FILE, settings, SETTINGS_TYPE);
 }
