@@ -20,6 +20,7 @@ clock.granularity = "seconds";
 let times = storage.loadTimes();
 updateFeedText();
 updateSleepText();
+toggleSleepButton();
 
 // event handler: button FEED clicked
 btTr.onactivate = function(evt) {
