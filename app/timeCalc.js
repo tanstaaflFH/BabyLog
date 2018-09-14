@@ -12,9 +12,9 @@ export function elapsed(inpTime) {
     // calculate difference to now and calculate hours and minutes
     let myNow = new Date();
     let elapsed = myNow - inpTime;
-    let hours = Math.round(elapsed/(1000*60*60))
-    let min = Math.round(elapsed/(1000*60))
-    
+    let hours = Math.floor((elapsed % 86400000) / 3600000);
+    let min = Math.round(((elapsed % 86400000) % 3600000) / 60000);
+
     // build return string, show if data is older than 24 hours
     let returnString = hours + ":" + utils.zeroPad(min);
     if (hours>24) { returnString = "old data"};

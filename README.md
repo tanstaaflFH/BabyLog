@@ -2,7 +2,7 @@
 
 A FitBit Smartwatch app to track in a very simplistic way when your baby slept or ate the last time
 
-![Versa](/resources/Screenshots/Screenshot_Versa.png)
+![Versa](resources/Screenshots/Screenshot_Versa.png)
 
 The display shows several data:
 - the last time you logged a baby feed time
