@@ -12,14 +12,23 @@ let timeSleepEnd = document.getElementById("timeSleepEnd");
 let elapsedSleep = document.getElementById("elapsedSleep");
 let btTr = document.getElementById("btn-tr");
 let btBr = document.getElementById("btn-br");
+//sleep log DOM elements
+let listSleepDOM = new Array(10);
+for (let i=0; i<listSleepDOM.length; i++) {
+    let symbol = document.getElementById("listSleepItem" + i);
+    listSleepDOM[i] = [symbol.getElementById("txtTime"), 
+                       symbol.getElementById("txtDuration")];
+}
 
 //initialize clock / refresh
 clock.granularity = "seconds";
 
 //initialize latest saved data
 let times = storage.loadTimes();
+let sleepLog = storage.loadSleepLog();
 updateFeedText();
 updateSleepText();
+updateSleepLog();
 toggleSleepButton();
 
 // event handler: button FEED clicked
@@ -51,6 +60,14 @@ btBr.onactivate = function(evt) {
         //if sleeping
         times.sleepEnd = new Date();
         times.sleeping = false;
+
+        //store a new sleep log entry
+        let logTimes = timeCalc.hoursMin(times.sleepStart) + " - " + timeCalc.hoursMin(times.sleepEnd);
+        let logDuration = timeCalc.elapsed(times.sleepStart);
+        sleepLog.unshift([logTimes, logDuration]);
+        sleepLog.pop();
+        storage.saveSleepLog(sleepLog);
+        updateSleepLog();
 
      }
 
@@ -88,9 +105,9 @@ function updateSleepText() {
     if (times.sleeping) {
 
         // sleep is ongoing
-        timeSleepEnd.text = "sleeping for";
-        timeSleepEnd.style.fill = "fb-blue";
-        elapsedSleep.text = timeCalc.elapsed(times.sleepStart);
+        timeSleepEnd.text = "sleeping";
+        timeSleepEnd.style.fill = "fb-indigo";
+        elapsedSleep.text = "for " + timeCalc.elapsed(times.sleepStart);
 
     } else {
 
@@ -99,6 +116,15 @@ function updateSleepText() {
         timeSleepEnd.style.fill = "white";
         elapsedSleep.text = "awake for " + timeCalc.elapsed(times.sleepEnd);
 
+    }
+
+}
+
+function updateSleepLog() {
+
+    for (let index = 0; index < sleepLog.length; index++) {
+        listSleepDOM[index][0].text = sleepLog[index][0];
+        listSleepDOM[index][1].text = "Duration: " + sleepLog[index][1];
     }
 
 }

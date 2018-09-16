@@ -5,6 +5,7 @@ A FitBit Smartwatch app to track in a very simplistic way when your baby slept o
 ![Versa](resources/Screenshots/Screenshot_Versa.png)
 
 The display shows several data:
+
 - the last time you logged a baby feed time
 - the elapsed time since the last logged feed
 - the last time the baby started a sleep
@@ -18,7 +19,8 @@ You can start / end a sleep log by the lower right combo button.
 
 **Only the last feed / sleep is logged. Older data is overwritten.**
 
-# Disclaimer:
+## Disclaimer
+
 I wrote this very quickly for exactly my needs. 
 If you want further or modified behaviour, feel free to built on my simple code that can be found at
 [GitHub](https://github.com/tanstaaflFH/BabyLog)
