@@ -2,11 +2,19 @@
 
   <defs>
     <symbol id="sleepLogItem">
-      <image id="iconList" y="15" x="20" height="30" width="30" fill="fb-indigo" href="icons/btn_combo_sleep.png" />
+      <image id="iconList" y="15" x="20" height="30" width="30" fill="fb-cerulean" href="icons/btn_combo_sleep.png" />
       <text id="txtTime" y="25" class="defaultText txtListSleepTime">12:00 - 12:55</text>
       <text id="txtDuration" y="50" class="defaultText txtListSleepTime">Duration: 01:25</text>
-      <line id="separator" x1="0%" x2="100%" y1="60" y2="60" fill="fb-light-gray" />
+      <line id="separator" x1="0%" x2="100%" y1="60" y2="60" stroke-width="1" fill="fb-light-gray" />
     </symbol>
+
+    <symbol id="feedLogItem">
+      <image id="iconList" y="15" x="20" height="30" width="30" fill="fb-peach" href="icons/btn_combo_bottle.png" />
+      <text id="txtTime" y="25" class="defaultText txtListSleepTime">12:00 - 12:55</text>
+      <text id="txtDuration" y="50" class="defaultText txtListSleepTime">Since last: 01:25</text>
+      <line id="separator" x1="0%" x2="100%" y1="60" y2="60" stroke-width="1" fill="fb-light-gray" />
+    </symbol>
+
   </defs>
 
   <use id="container" href="#panoramaview">
@@ -21,7 +29,7 @@
       <text id="timeFeed" y="25%" class="defaultText txtDataMain">12:45</text>
       <text id="elapsedFeed" y="35%" class="defaultText txtDataMain">3h12min ago</text>
 
-      <text id="lblSleep" y="55%" class="defaultText label" fill="fb-indigo">Last sleep at:</text>
+      <text id="lblSleep" y="55%" class="defaultText label" fill="fb-cerulean">Last sleep at:</text>
       <text id="timeSleepStart" y="65%" class="defaultText txtDataMain">Start: 12:45</text>
       <text id="timeSleepEnd" y="75%" class="defaultText txtDataMain">End: still sleeping</text>
       <text id="elapsedSleep" y="85%" class="defaultText txtDataMain">3h12min ago</text>
@@ -33,7 +41,7 @@
         <set href="combo-button-stroke" attributeName="display" to="inline"/>
       </use>
 
-      <use id="btn-br" href="#combo-button-lower-right" fill="fb-indigo">
+      <use id="btn-br" href="#combo-button-lower-right" fill="fb-cerulean">
         <set href="combo-button-icon" attributeName="href" to="icons/btn_combo_sleep.png"/>
         <set href="combo-button-icon-press" attributeName="href" to="icons/btn_combo_sleep.png"/>
         <set href="combo-button-stroke" attributeName="display" to="inline"/>
@@ -87,7 +95,7 @@
       </svg>
 
       <!-- header + footer -->
-      <rect id="headRect1" class="headRect" fill="fb-indigo" />
+      <rect id="headRect1" class="headRect" fill="fb-cerulean" />
       <text id="headText1" class="defaultText header" fill="white">Sleep log</text>
       <line id="headLine1" class="headLine" />
       <rect id="footRect1" class="footRect" fill="black" />
@@ -99,10 +107,50 @@
       
       <rect id="bg2" class="background" />
       
+      <!-- list -->
+      <svg id="bgTileList2" class="bgList">
+
+        <rect class="background" />
+
+        <use id="listFeed" href="#scrollview">
+          <use href="#scrollview-item" class="listSleepItem">
+            <use id="listFeedItem0" href="#feedLogItem" />
+          </use>
+          <use href="#scrollview-item" class="listSleepItem">
+            <use id="listFeedItem1" href="#feedLogItem" />
+          </use>
+          <use href="#scrollview-item" class="listSleepItem">
+            <use id="listFeedItem2" href="#feedLogItem" />
+          </use>
+          <use href="#scrollview-item" class="listSleepItem">
+            <use id="listFeedItem3" href="#feedLogItem" />
+          </use>
+          <use href="#scrollview-item" class="listSleepItem">
+            <use id="listFeedItem4" href="#feedLogItem" />
+          </use>
+          <use href="#scrollview-item" class="listSleepItem">
+            <use id="listFeedItem5" href="#feedLogItem" />
+          </use>
+          <use href="#scrollview-item" class="listSleepItem">
+            <use id="listFeedItem6" href="#feedLogItem" />
+          </use>
+          <use href="#scrollview-item" class="listSleepItem">
+            <use id="listFeedItem7" href="#feedLogItem" />
+          </use>
+          <use href="#scrollview-item" class="listSleepItem">
+            <use id="listFeedItem8" href="#feedLogItem" />
+          </use>          
+          <use href="#scrollview-item" class="listSleepItem">
+            <use id="listFeedItem9" href="#feedLogItem" />
+          </use>          
+        </use>
+
+      </svg>      
       <!-- header -->
       <rect id="headRect2" class="headRect" fill="fb-peach" />
       <text id="headText2" class="defaultText header" fill="fb-extra-dark-gray">Feed log</text>
       <line id="headLine2" class="headLine" />
+      <rect id="footRect2" class="footRect" fill="black" />      
 
     </use>
 

@@ -19,6 +19,13 @@ for (let i=0; i<listSleepDOM.length; i++) {
     listSleepDOM[i] = [symbol.getElementById("txtTime"), 
                        symbol.getElementById("txtDuration")];
 }
+//feed log DOM elements
+let listFeedDOM = new Array(10);
+for (let i=0; i<listFeedDOM.length; i++) {
+    let symbol = document.getElementById("listFeedItem" + i);
+    listFeedDOM[i] = [symbol.getElementById("txtTime"), 
+                      symbol.getElementById("txtDuration")];
+}
 
 //initialize clock / refresh
 clock.granularity = "seconds";
@@ -26,14 +33,25 @@ clock.granularity = "seconds";
 //initialize latest saved data
 let times = storage.loadTimes();
 let sleepLog = storage.loadSleepLog();
+let feedLog = storage.loadFeedLog();
 updateFeedText();
 updateSleepText();
 updateSleepLog();
+updateFeedLog();
 toggleSleepButton();
 
 // event handler: button FEED clicked
 btTr.onactivate = function(evt) {
     
+    //store a new feed log entry
+    let tempNow = new Date();
+    let logTimes = timeCalc.hoursMin(tempNow);
+    let logDuration = timeCalc.elapsed(times.sleepStart);
+    feedLog.unshift([logTimes, logDuration]);
+    feedLog.pop();
+    storage.saveFeedLog(feedLog);
+
+    // update current display
     times.feed = new Date();
     
     // save feed time to device
@@ -41,6 +59,7 @@ btTr.onactivate = function(evt) {
     
     // refresh display
     updateFeedText();
+    updateFeedLog();
 
 }
 
@@ -99,22 +118,22 @@ function updateFeedText() {
 function updateSleepText() {
 
     // always
-    timeSleepStart.text = "start: " + timeCalc.hoursMin(times.sleepStart);
+    timeSleepStart.text = "Start: " + timeCalc.hoursMin(times.sleepStart);
 
     // depending on sleep status
     if (times.sleeping) {
 
         // sleep is ongoing
         timeSleepEnd.text = "sleeping";
-        timeSleepEnd.style.fill = "fb-indigo";
+        timeSleepEnd.style.fill = "fb-cerulean";
         elapsedSleep.text = "for " + timeCalc.elapsed(times.sleepStart);
 
     } else {
 
         // sleep is not ongoing
-        timeSleepEnd.text = "end: " + timeCalc.hoursMin(times.sleepEnd);
+        timeSleepEnd.text = "End: " + timeCalc.hoursMin(times.sleepEnd);
         timeSleepEnd.style.fill = "white";
-        elapsedSleep.text = "awake for " + timeCalc.elapsed(times.sleepEnd);
+        elapsedSleep.text = "Awake for " + timeCalc.elapsed(times.sleepEnd);
 
     }
 
@@ -125,6 +144,15 @@ function updateSleepLog() {
     for (let index = 0; index < sleepLog.length; index++) {
         listSleepDOM[index][0].text = sleepLog[index][0];
         listSleepDOM[index][1].text = "Duration: " + sleepLog[index][1];
+    }
+
+}
+
+function updateFeedLog() {
+
+    for (let index = 0; index < feedLog.length; index++) {
+        listFeedDOM[index][0].text = feedLog[index][0];
+        listFeedDOM[index][1].text = "Since last: " + feedLog[index][1];
     }
 
 }

@@ -21,6 +21,10 @@
   x: 70;
 }
 
+.txtListFeedTime {
+  font-size: 22;
+}
+
 .header {
   font-size: 24;
   text-anchor: middle;

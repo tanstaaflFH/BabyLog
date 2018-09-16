@@ -58,7 +58,6 @@ export function loadSleepLog() {
     returnObject = tempArray;
   }
 
-  console.log(JSON.stringify(returnObject));
   return returnObject;
 
 }
@@ -69,5 +68,34 @@ export function saveSleepLog(input) {
   let jsonData = JSON.stringify(input);
   
   fs.writeFileSync(SLEEP_LOG_FILE, jsonData, SETTINGS_TYPE);
+  
+}
+
+// Load feed log from filesystem
+export function loadFeedLog() {
+
+  let returnObject;
+
+  try { 
+    returnObject = JSON.parse(fs.readFileSync(FEED_LOG_FILE, SETTINGS_TYPE));
+  } catch (ex) {
+    console.log("file read error " + ex);
+    let tempArray = new Array(10);
+    for (let index = 0; index < tempArray.length; index++) {
+      tempArray[index] = ["xx:xx - xx:xx", "x:xx"];
+    }
+    returnObject = tempArray;
+  }
+
+  return returnObject;
+
+}
+
+// Save feed log to the filesystem
+export function saveFeedLog(input) {
+    
+  let jsonData = JSON.stringify(input);
+  
+  fs.writeFileSync(FEED_LOG_FILE, jsonData, SETTINGS_TYPE);
   
 }
