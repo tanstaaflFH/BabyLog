@@ -3,6 +3,7 @@ import document from "document";
 import * as storage from "./storage";
 import clock from "clock";
 import * as timeCalc from "./timeCalc";
+import { display } from "display";
 
 //get all interactive DOM elements
 let timeFeed = document.getElementById("timeFeed");
@@ -28,7 +29,7 @@ for (let i=0; i<listFeedDOM.length; i++) {
 }
 
 //initialize clock / refresh
-clock.granularity = "seconds";
+clock.granularity = "minutes";
 
 //initialize latest saved data
 let times = storage.loadTimes();
@@ -105,6 +106,19 @@ clock.ontick = (evt) => {
     // update elapsed
     updateFeedText();
     updateSleepText();
+}
+
+// event handler: update main screen on display change
+display.onchange = function() {
+
+    if (display.on) {
+
+        // update elapsed
+        updateFeedText();
+        updateSleepText();
+
+    }
+
 }
 
 // update feed display
