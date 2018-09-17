@@ -46,7 +46,7 @@ btTr.onactivate = function(evt) {
     //store a new feed log entry
     let tempNow = new Date();
     let logTimes = timeCalc.hoursMin(tempNow);
-    let logDuration = timeCalc.elapsed(times.sleepStart);
+    let logDuration = timeCalc.elapsed(times.feed);
     feedLog.unshift([logTimes, logDuration]);
     feedLog.pop();
     storage.saveFeedLog(feedLog);
