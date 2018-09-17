@@ -7,9 +7,7 @@ import { display } from "display";
 
 //get all interactive DOM elements
 let timeFeed = document.getElementById("timeFeed");
-let elapsedFeed = document.getElementById("elapsedFeed");
 let timeSleepStart = document.getElementById("timeSleepStart");
-let timeSleepEnd = document.getElementById("timeSleepEnd");
 let elapsedSleep = document.getElementById("elapsedSleep");
 let btTr = document.getElementById("btn-tr");
 let btBr = document.getElementById("btn-br");
@@ -124,30 +122,24 @@ display.onchange = function() {
 // update feed display
 function updateFeedText() {
 
-    timeFeed.text = timeCalc.hoursMin(times.feed);
-    elapsedFeed.text = timeCalc.elapsed(times.feed) + " ago";
+    timeFeed.text = timeCalc.hoursMin(times.feed) + " / " + timeCalc.elapsed(times.feed) + " ago";
 
 }
 
 function updateSleepText() {
 
-    // always
-    timeSleepStart.text = "Start: " + timeCalc.hoursMin(times.sleepStart);
-
     // depending on sleep status
     if (times.sleeping) {
 
         // sleep is ongoing
-        timeSleepEnd.text = "sleeping";
-        timeSleepEnd.style.fill = "fb-cerulean";
+        timeSleepStart.text = timeCalc.hoursMin(times.sleepStart) + " - sleeping";
         elapsedSleep.text = "for " + timeCalc.elapsed(times.sleepStart);
 
     } else {
 
         // sleep is not ongoing
-        timeSleepEnd.text = "End: " + timeCalc.hoursMin(times.sleepEnd);
-        timeSleepEnd.style.fill = "white";
-        elapsedSleep.text = "Awake for " + timeCalc.elapsed(times.sleepEnd);
+        timeSleepStart.text = timeCalc.hoursMin(times.sleepStart) + " - " + timeCalc.hoursMin(times.sleepEnd);
+        elapsedSleep.text = "for " + timeCalc.elapsed(times.sleepEnd);
 
     }
 
@@ -176,16 +168,19 @@ function toggleSleepButton() {
     // change the icon of the sleep combo button depending if a sleep is ongoing or not
     let btIcon = btBr.getElementById("combo-button-icon");
     let btIconPressed = btBr.getElementById("combo-button-icon-press");
+    let iconStatusSleep = document.getElementById("iconStatusSleep");
 
     if (times.sleeping) {
 
         btIcon.image = "icons/btn_combo_pause_p.png";
         btIconPressed.image = "icons/btn_combo_pause_press_p.png";
+        iconStatusSleep.image = "icons/btn_combo_sleep.png";
 
     } else {
         
         btIcon.image = "icons/btn_combo_sleep.png";
         btIconPressed.image = "icons/btn_combo_sleep.png";
+        iconStatusSleep.image = "icons/baby_awake_status.png";
 
     }
 

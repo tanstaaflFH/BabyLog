@@ -25,14 +25,13 @@
       <rect id="bg0" class="background" />
         
       <!-- text -->
-      <text id="lblFeed" y="15%" class="defaultText label" fill="fb-peach">Last feed at:</text>
-      <text id="timeFeed" y="25%" class="defaultText txtDataMain">12:45</text>
-      <text id="elapsedFeed" y="35%" class="defaultText txtDataMain">3h12min ago</text>
+      <text id="lblFeed" y="20%" class="defaultText label" fill="fb-peach">Last feed at:</text>
+      <text id="timeFeed" x="5%" y="35%" class="defaultText txtDataMain">12:45</text>
 
       <text id="lblSleep" y="55%" class="defaultText label" fill="fb-cerulean">Last sleep at:</text>
-      <text id="timeSleepStart" y="65%" class="defaultText txtDataMain">Start: 12:45</text>
-      <text id="timeSleepEnd" y="75%" class="defaultText txtDataMain">End: still sleeping</text>
-      <text id="elapsedSleep" y="85%" class="defaultText txtDataMain">3h12min ago</text>
+      <text id="timeSleepStart" x="5%" y="70%" class="defaultText txtDataMain">12:45 - </text>
+      <image id="iconStatusSleep" y="85%-28" x="5%" height="30" width="30" fill="fb-cerulean" href="icons/baby_awake_status.png" />
+      <text id="elapsedSleep" x="$+10" y="85%" class="defaultText txtDataMain">3h12min ago</text>
 
       <!-- buttons -->
       <use id="btn-tr" href="#combo-button-upper-right" fill="fb-peach">
