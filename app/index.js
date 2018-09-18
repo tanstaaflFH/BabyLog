@@ -25,6 +25,12 @@ for (let i=0; i<listFeedDOM.length; i++) {
     listFeedDOM[i] = [symbol.getElementById("txtTime"), 
                       symbol.getElementById("txtDuration")];
 }
+//input mask correction of times DOM
+let clickTargetFeed = document.getElementById("clickTargetFeed");
+let clickTargetSleepStart = document.getElementById("clickTargetSleepStart");
+let clickTargetSleepEnd = document.getElementById("clickTargetSleepEnd");
+let svgInputCorrection = document.getElementById("inpMaskCorrection");
+let inpCorrectionLabel = document.getElementById("inpCorrectionLabel");
 
 //initialize clock / refresh
 clock.granularity = "minutes";
@@ -119,6 +125,17 @@ display.onchange = function() {
 
 }
 
+// event handlers for click targets
+clickTargetFeed.onclick = function() {
+    showInputMaskCorrection("feed");
+}
+clickTargetSleepStart.onclick = function() {
+    showInputMaskCorrection("sleep start");
+}
+clickTargetSleepEnd.onclick = function() {
+    showInputMaskCorrection("sleep end");
+}
+
 // update feed display
 function updateFeedText() {
 
@@ -183,5 +200,12 @@ function toggleSleepButton() {
         iconStatusSleep.image = "icons/baby_awake_status.png";
 
     }
+
+}
+
+function showInputMaskCorrection(type) {
+
+    inpCorrectionLabel.text = "Please enter the updated " + type + " time.";
+    svgInputCorrection.style.display = "inline";
 
 }

@@ -27,9 +27,12 @@
       <!-- text -->
       <text id="lblFeed" y="20%" class="defaultText label" fill="fb-peach">Last feed at:</text>
       <text id="timeFeed" x="5%" y="35%" class="defaultText txtDataMain">12:45</text>
+      <rect id="clickTargetFeed" x="3%" y="35%-31" width="90" height="40" opacity="0" pointer-events="visible"/>
 
       <text id="lblSleep" y="55%" class="defaultText label" fill="fb-cerulean">Last sleep at:</text>
       <text id="timeSleepStart" x="5%" y="70%" class="defaultText txtDataMain">12:45 - </text>
+      <rect id="clickTargetSleepStart" x="3%" y="70%-31" width="90" height="40" opacity="0" pointer-events="visible"/>
+      <rect id="clickTargetSleepEnd" x="107" y="70%-31" width="90" height="40" opacity="0" pointer-events="visible"/>
       <image id="iconStatusSleep" y="85%-28" x="5%" height="30" width="30" fill="fb-cerulean" href="icons/baby_awake_status.png" />
       <text id="elapsedSleep" x="$+10" y="85%" class="defaultText txtDataMain">3h12min ago</text>
 
@@ -166,10 +169,11 @@
   </use>
 
   <!-- Input mask for corrections -->
-  <svg id="inpMaskCorrection" display="inline">
+  <svg id="inpMaskCorrection" display="none">
 
     <!-- Background transparent -->
-    <rect id="inpMaskCorrectionBG" x="0" y="0" width="100%" height="100%" fill="black" opacity="0.8" />
+    <rect id="inpMaskCorrectionBG" x="0" y="0" width="100%" height="100%" fill="black" opacity="0.95" />
+
 
     <!-- Tumbler hours -->
     <use id="tumblerLeft" href="#tumblerview">
@@ -324,6 +328,133 @@
       <use id="item23" href="#tumbler-item" class="tumblerItem">
         <text id="content">23</text>
       </use>
+      <use id="item24" href="#tumbler-item" class="tumblerItem">
+        <text id="content">24</text>
+      </use>
+      <use id="item25" href="#tumbler-item" class="tumblerItem">
+        <text id="content">25</text>
+      </use>
+      <use id="item26" href="#tumbler-item" class="tumblerItem">
+        <text id="content">26</text>
+      </use>
+      <use id="item27" href="#tumbler-item" class="tumblerItem">
+        <text id="content">27</text>
+      </use>
+      <use id="item28" href="#tumbler-item" class="tumblerItem">
+        <text id="content">28</text>
+      </use>
+      <use id="item29" href="#tumbler-item" class="tumblerItem">
+        <text id="content">29</text>
+      </use>
+      <use id="item30" href="#tumbler-item" class="tumblerItem">
+        <text id="content">30</text>
+      </use>
+      <use id="item31" href="#tumbler-item" class="tumblerItem">
+        <text id="content">31</text>
+      </use>
+      <use id="item32" href="#tumbler-item" class="tumblerItem">
+        <text id="content">32</text>
+      </use>
+      <use id="item33" href="#tumbler-item" class="tumblerItem">
+        <text id="content">33</text>
+      </use>
+      <use id="item34" href="#tumbler-item" class="tumblerItem">
+        <text id="content">34</text>
+      </use>
+      <use id="item35" href="#tumbler-item" class="tumblerItem">
+        <text id="content">35</text>
+      </use>
+      <use id="item36" href="#tumbler-item" class="tumblerItem">
+        <text id="content">36</text>
+      </use>
+      <use id="item37" href="#tumbler-item" class="tumblerItem">
+        <text id="content">37</text>
+      </use>
+      <use id="item38" href="#tumbler-item" class="tumblerItem">
+        <text id="content">38</text>
+      </use>
+      <use id="item39" href="#tumbler-item" class="tumblerItem">
+        <text id="content">39</text>
+      </use>
+      <use id="item40" href="#tumbler-item" class="tumblerItem">
+        <text id="content">40</text>
+      </use>
+      <use id="item41" href="#tumbler-item" class="tumblerItem">
+        <text id="content">41</text>
+      </use>
+      <use id="item42" href="#tumbler-item" class="tumblerItem">
+        <text id="content">42</text>
+      </use>
+      <use id="item43" href="#tumbler-item" class="tumblerItem">
+        <text id="content">43</text>
+      </use>
+      <use id="item44" href="#tumbler-item" class="tumblerItem">
+        <text id="content">44</text>
+      </use>
+      <use id="item45" href="#tumbler-item" class="tumblerItem">
+        <text id="content">45</text>
+      </use>
+      <use id="item46" href="#tumbler-item" class="tumblerItem">
+        <text id="content">46</text>
+      </use>
+      <use id="item47" href="#tumbler-item" class="tumblerItem">
+        <text id="content">47</text>
+      </use>
+      <use id="item48" href="#tumbler-item" class="tumblerItem">
+        <text id="content">48</text>
+      </use>
+      <use id="item49" href="#tumbler-item" class="tumblerItem">
+        <text id="content">49</text>
+      </use>
+      <use id="item50" href="#tumbler-item" class="tumblerItem">
+        <text id="content">50</text>
+      </use>
+      <use id="item51" href="#tumbler-item" class="tumblerItem">
+        <text id="content">51</text>
+      </use>
+      <use id="item52" href="#tumbler-item" class="tumblerItem">
+        <text id="content">52</text>
+      </use>
+      <use id="item53" href="#tumbler-item" class="tumblerItem">
+        <text id="content">53</text>
+      </use>
+      <use id="item54" href="#tumbler-item" class="tumblerItem">
+        <text id="content">54</text>
+      </use>
+      <use id="item55" href="#tumbler-item" class="tumblerItem">
+        <text id="content">55</text>
+      </use>
+      <use id="item56" href="#tumbler-item" class="tumblerItem">
+        <text id="content">56</text>
+      </use>
+      <use id="item57" href="#tumbler-item" class="tumblerItem">
+        <text id="content">57</text>
+      </use>
+      <use id="item58" href="#tumbler-item" class="tumblerItem">
+        <text id="content">58</text>
+      </use>
+      <use id="item59" href="#tumbler-item" class="tumblerItem">
+        <text id="content">59</text>
+      </use>
+
+    </use>
+
+    <!-- header -->
+    <rect id="inpCorrectionHeader" x="0" y="0" width="100%" height="25%" fill="black"/>
+    <textarea id="inpCorrectionLabel" x="0%" y="0%" width="70%" height="25%"  display-align="center" class="defaultText header" fill="white">Please enter the new feed time</textarea>
+    <line id="inpCorrectionLine" x1="0" x2="100%" y1="25%" y2="25%" fill="fb-light-gray" stroke-width="2" />
+
+    <!-- buttons -->
+    <use id="btn-accept" href="#combo-button-upper-right" fill="fb-lime">
+      <set href="combo-button-icon" attributeName="href" to="icons/btn_combo_check_p.png"/>
+      <set href="combo-button-icon-press" attributeName="href" to="icons/btn_combo_check_press_p.png"/>
+      <set href="combo-button-stroke" attributeName="display" to="inline"/>
+    </use>
+
+    <use id="btn-cancel" href="#combo-button-lower-right" fill="fb-pink">
+      <set href="combo-button-icon" attributeName="href" to="icons/btn_combo_x_p.png"/>
+      <set href="combo-button-icon-press" attributeName="href" to="icons/btn_combo_x_press_p.png"/>
+      <set href="combo-button-stroke" attributeName="display" to="inline"/>
     </use>
 
   </svg>
