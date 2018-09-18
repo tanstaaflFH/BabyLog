@@ -73,3 +73,35 @@
 .listSleepItem {
   height: 60;
 }
+
+#tumblerLeft { 
+  x: 0;
+  y: 50%-55;
+  width: 40%;
+}
+
+#tumblerRight { 
+  x: 40%;
+  y: 50%-55;
+  width: 40%;
+}
+
+.tumblerItemLeft { 
+  height: 90; }
+
+.tumblerItem text { 
+  font-family: "Colfax-Light";
+  text-anchor: middle;
+  font-size: 80; 
+  fill: white; 
+  x: 50%;
+}
+
+#tumblerColon {
+  font-family: "Colfax-Light";
+  text-anchor: middle;
+  font-size: 80; 
+  fill: white; 
+  x: 40%;
+  y: 50%+35;
+}

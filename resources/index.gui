@@ -165,5 +165,167 @@
 
   </use>
 
+  <!-- Input mask for corrections -->
+  <svg id="inpMaskCorrection" display="inline">
+
+    <!-- Background transparent -->
+    <rect id="inpMaskCorrectionBG" x="0" y="0" width="100%" height="100%" fill="black" opacity="0.8" />
+
+    <!-- Tumbler hours -->
+    <use id="tumblerLeft" href="#tumblerview">
+      <use id="item0" href="#tumbler-item" class="tumblerItem">
+        <text id="content">00</text>
+      </use>
+      <use id="item1" href="#tumbler-item" class="tumblerItem">
+        <text id="content">01</text>
+      </use>
+      <use id="item2" href="#tumbler-item" class="tumblerItem">
+        <text id="content">02</text>
+      </use>
+      <use id="item3" href="#tumbler-item" class="tumblerItem">
+        <text id="content">03</text>
+      </use>
+      <use id="item4" href="#tumbler-item" class="tumblerItem">
+        <text id="content">04</text>
+      </use>
+      <use id="item5" href="#tumbler-item" class="tumblerItem">
+        <text id="content">05</text>
+      </use>
+      <use id="item6" href="#tumbler-item" class="tumblerItem">
+        <text id="content">06</text>
+      </use>
+      <use id="item7" href="#tumbler-item" class="tumblerItem">
+        <text id="content">07</text>
+      </use>
+      <use id="item8" href="#tumbler-item" class="tumblerItem">
+        <text id="content">08</text>
+      </use>
+      <use id="item9" href="#tumbler-item" class="tumblerItem">
+        <text id="content">09</text>
+      </use>
+      <use id="item10" href="#tumbler-item" class="tumblerItem">
+        <text id="content">10</text>
+      </use>
+      <use id="item11" href="#tumbler-item" class="tumblerItem">
+        <text id="content">11</text>
+      </use>
+      <use id="item12" href="#tumbler-item" class="tumblerItem">
+        <text id="content">12</text>
+      </use>
+      <use id="item13" href="#tumbler-item" class="tumblerItem">
+        <text id="content">13</text>
+      </use>
+      <use id="item14" href="#tumbler-item" class="tumblerItem">
+        <text id="content">14</text>
+      </use>
+      <use id="item15" href="#tumbler-item" class="tumblerItem">
+        <text id="content">15</text>
+      </use>
+      <use id="item16" href="#tumbler-item" class="tumblerItem">
+        <text id="content">16</text>
+      </use>
+      <use id="item17" href="#tumbler-item" class="tumblerItem">
+        <text id="content">17</text>
+      </use>
+      <use id="item18" href="#tumbler-item" class="tumblerItem">
+        <text id="content">18</text>
+      </use>
+      <use id="item19" href="#tumbler-item" class="tumblerItem">
+        <text id="content">19</text>
+      </use>
+      <use id="item20" href="#tumbler-item" class="tumblerItem">
+        <text id="content">20</text>
+      </use>
+      <use id="item21" href="#tumbler-item" class="tumblerItem">
+        <text id="content">21</text>
+      </use>
+      <use id="item22" href="#tumbler-item" class="tumblerItem">
+        <text id="content">22</text>
+      </use>
+      <use id="item23" href="#tumbler-item" class="tumblerItem">
+        <text id="content">23</text>
+      </use>
+    </use>
+
+    <!-- colon -->
+    <text id="tumblerColon">:</text>
+
+    <!-- Tumbler Minutes -->
+    <use id="tumblerRight" href="#tumblerview">
+      <use id="item0" href="#tumbler-item" class="tumblerItem">
+        <text id="content">00</text>
+      </use>
+      <use id="item1" href="#tumbler-item" class="tumblerItem">
+        <text id="content">01</text>
+      </use>
+      <use id="item2" href="#tumbler-item" class="tumblerItem">
+        <text id="content">02</text>
+      </use>
+      <use id="item3" href="#tumbler-item" class="tumblerItem">
+        <text id="content">03</text>
+      </use>
+      <use id="item4" href="#tumbler-item" class="tumblerItem">
+        <text id="content">04</text>
+      </use>
+      <use id="item5" href="#tumbler-item" class="tumblerItem">
+        <text id="content">05</text>
+      </use>
+      <use id="item6" href="#tumbler-item" class="tumblerItem">
+        <text id="content">06</text>
+      </use>
+      <use id="item7" href="#tumbler-item" class="tumblerItem">
+        <text id="content">07</text>
+      </use>
+      <use id="item8" href="#tumbler-item" class="tumblerItem">
+        <text id="content">08</text>
+      </use>
+      <use id="item9" href="#tumbler-item" class="tumblerItem">
+        <text id="content">09</text>
+      </use>
+      <use id="item10" href="#tumbler-item" class="tumblerItem">
+        <text id="content">10</text>
+      </use>
+      <use id="item11" href="#tumbler-item" class="tumblerItem">
+        <text id="content">11</text>
+      </use>
+      <use id="item12" href="#tumbler-item" class="tumblerItem">
+        <text id="content">12</text>
+      </use>
+      <use id="item13" href="#tumbler-item" class="tumblerItem">
+        <text id="content">13</text>
+      </use>
+      <use id="item14" href="#tumbler-item" class="tumblerItem">
+        <text id="content">14</text>
+      </use>
+      <use id="item15" href="#tumbler-item" class="tumblerItem">
+        <text id="content">15</text>
+      </use>
+      <use id="item16" href="#tumbler-item" class="tumblerItem">
+        <text id="content">16</text>
+      </use>
+      <use id="item17" href="#tumbler-item" class="tumblerItem">
+        <text id="content">17</text>
+      </use>
+      <use id="item18" href="#tumbler-item" class="tumblerItem">
+        <text id="content">18</text>
+      </use>
+      <use id="item19" href="#tumbler-item" class="tumblerItem">
+        <text id="content">19</text>
+      </use>
+      <use id="item20" href="#tumbler-item" class="tumblerItem">
+        <text id="content">20</text>
+      </use>
+      <use id="item21" href="#tumbler-item" class="tumblerItem">
+        <text id="content">21</text>
+      </use>
+      <use id="item22" href="#tumbler-item" class="tumblerItem">
+        <text id="content">22</text>
+      </use>
+      <use id="item23" href="#tumbler-item" class="tumblerItem">
+        <text id="content">23</text>
+      </use>
+    </use>
+
+  </svg>
 
 </svg>
