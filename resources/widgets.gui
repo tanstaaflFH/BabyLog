@@ -8,5 +8,6 @@
     <link rel="import" href="/mnt/sysassets/widgets/pagination_dots.gui" />
     <link rel="import" href="/mnt/sysassets/widgets/scrollview_widget.gui" />
     <link rel="import" href="/mnt/sysassets/widgets/tumblerview_widget.gui" />
+    <link rel="import" href="/mnt/sysassets/widgets/square_button_widget.gui" />
   </defs>
 </svg>
