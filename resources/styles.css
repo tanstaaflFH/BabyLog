@@ -24,6 +24,12 @@
   font-size: 22;
 }
 
+#inpCorrectionLabel {
+  font-size: 22;
+  text-anchor: middle;
+  fill: white;
+}
+
 .header {
   font-size: 24;
   text-anchor: middle;
@@ -72,4 +78,36 @@
 
 .listSleepItem {
   height: 60;
+}
+
+#tumblerLeft { 
+  x: 0;
+  y: 45%-55;
+  width: 50%;
+}
+
+#tumblerRight { 
+  x: 50%;
+  y: 45%-55;
+  width: 50%;
+}
+
+.tumblerItem { 
+  height: 100; }
+
+.tumblerItem text { 
+  font-family: "Colfax-Light";
+  text-anchor: middle;
+  font-size: 80; 
+  fill: white; 
+  x: 50%;
+}
+
+#tumblerColon {
+  font-family: "Colfax-Light";
+  text-anchor: middle;
+  font-size: 80; 
+  fill: white; 
+  x: 50%;
+  y: 45%+20;
 }

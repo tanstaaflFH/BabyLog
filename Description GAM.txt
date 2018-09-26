@@ -1,4 +1,4 @@
-A FitBit Smartwatch app to track in a very simplistic way when your baby slept or ate the last time.
+A FitBit Smartwatch app to track in a simple way your baby slept or ate the last time.
 Swipe left/right to change the screens.
 All data is stored on the watch. Current feed/sleep + the last 10 entries.
 
@@ -11,6 +11,7 @@ The display shows several data:
 
 You can log a feed by the upper right combo button.
 You can start / end a sleep log by the lower right combo button.
+Tap on any of the times to manually change it.
 
 2. Sleep log:
 
