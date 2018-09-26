@@ -294,7 +294,6 @@ function updateTimeEntry(type) {
             let logTimes = timeCalc.hoursMin(times.feed);
             let logDuration = timeCalc.elapsed(feedLog[1][2]) || "x:xx";
             feedLog[0] = [logTimes, logDuration, times.feed]
-            storage.saveTimes(times);
             storage.saveFeedLog(feedLog);
 
             //update screen
@@ -315,7 +314,6 @@ function updateTimeEntry(type) {
                 let logTimes = timeCalc.hoursMin(times.sleepStart) + " - " + timeCalc.hoursMin(times.sleepEnd);
                 let logDuration = timeCalc.elapsedBetween(times.sleepStart, times.sleepEnd) || "x:xx";
                 sleepLog[0] = [logTimes, logDuration]
-                storage.saveTimes(times);
                 storage.saveSleepLog(sleepLog);
             }
 
@@ -336,7 +334,6 @@ function updateTimeEntry(type) {
                 let logTimes = timeCalc.hoursMin(times.sleepStart) + " - " + timeCalc.hoursMin(times.sleepEnd);
                 let logDuration = timeCalc.elapsedBetween(times.sleepStart, times.sleepEnd) || "x:xx";
                 sleepLog[0] = [logTimes, logDuration]
-                storage.saveTimes(times);
                 storage.saveSleepLog(sleepLog);
             }
 
@@ -347,5 +344,8 @@ function updateTimeEntry(type) {
             break;
 
     }
+    
+    //always save the new current times object
+    storage.saveTimes(times);
 
 }
