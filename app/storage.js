@@ -79,7 +79,7 @@ export function loadFeedLog() {
   try { 
     returnObject = JSON.parse(fs.readFileSync(FEED_LOG_FILE, SETTINGS_TYPE));
     for (let index = 0; index < returnObject.length; index++) {
-      returnObject[index][2] = Date(returnObject[index][2]);    
+      returnObject[index][2] = new Date(returnObject[index][2]);    
     }
   } catch (ex) {
     console.log("file read error " + ex);
