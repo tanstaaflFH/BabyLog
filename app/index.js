@@ -38,8 +38,13 @@ let tumblerRight = document.getElementById("tumblerRight");
 let btnAccept = document.getElementById("btnAccept");
 let btnCancel = document.getElementById("btnCancel");
 
+// change the icon of the sleep combo button depending if a sleep is ongoing or not
+let btIcon = btBr.getElementById("combo-button-icon");
+let btIconPressed = btBr.getElementById("combo-button-icon-press");
+let iconStatusSleep = document.getElementById("iconStatusSleep");
+
 //initialize clock / refresh
-clock.granularity = "minutes";
+clock.granularity = "seconds";
 
 //initialize latest saved data
 let times = storage.loadTimes();
@@ -47,10 +52,8 @@ let sleepLog = storage.loadSleepLog();
 let feedLog = storage.loadFeedLog();
 let correctionType = ""; //module variable to store which time shall be corrected
 updateFeedText();
-updateSleepText();
 updateSleepLog();
 updateFeedLog();
-toggleSleepButton();
 
 // event handler: button FEED clicked
 btTr.onactivate = function(evt) {
@@ -105,10 +108,6 @@ btBr.onactivate = function(evt) {
     // save sleep time to device
     storage.saveTimes(times);
 
-    // refresh display
-    updateSleepText(); 
-    toggleSleepButton();
-
 }
 
 // event handler: update elapsed time on each clock tick
@@ -116,7 +115,8 @@ clock.ontick = (evt) => {
     
     // update elapsed
     updateFeedText();
-    updateSleepText();
+    toggleSleepButton();
+    updateSleepInfo();
 }
 
 // event handler: update main screen on display change
@@ -126,7 +126,6 @@ display.onchange = function() {
 
         // update elapsed
         updateFeedText();
-        updateSleepText();
 
     }
 
@@ -167,25 +166,6 @@ function updateFeedText() {
 
 }
 
-function updateSleepText() {
-
-    // depending on sleep status
-    if (times.sleeping) {
-
-        // sleep is ongoing
-        timeSleepStart.text = timeCalc.hoursMin(times.sleepStart) + " - sleeping";
-        elapsedSleep.text = "for " + timeCalc.elapsed(times.sleepStart);
-
-    } else {
-
-        // sleep is not ongoing
-        timeSleepStart.text = timeCalc.hoursMin(times.sleepStart) + " - " + timeCalc.hoursMin(times.sleepEnd);
-        elapsedSleep.text = "for " + timeCalc.elapsed(times.sleepEnd);
-
-    }
-
-}
-
 function updateSleepLog() {
 
     for (let index = 0; index < sleepLog.length; index++) {
@@ -205,26 +185,31 @@ function updateFeedLog() {
 }
 
 function toggleSleepButton() {
-    
-    // change the icon of the sleep combo button depending if a sleep is ongoing or not
-    let btIcon = btBr.getElementById("combo-button-icon");
-    let btIconPressed = btBr.getElementById("combo-button-icon-press");
-    let iconStatusSleep = document.getElementById("iconStatusSleep");
 
     if (times.sleeping) {
 
         btIcon.image = "icons/btn_combo_pause_p.png";
         btIconPressed.image = "icons/btn_combo_pause_press_p.png";
         iconStatusSleep.image = "icons/btn_combo_sleep.png";
-
-    } else {
-        
-        btIcon.image = "icons/btn_combo_sleep.png";
-        btIconPressed.image = "icons/btn_combo_sleep.png";
-        iconStatusSleep.image = "icons/baby_awake_status.png";
+        timeSleepStart.text = timeCalc.hoursMin(times.sleepStart) + " - sleeping";
+        elapsedSleep.text = "for " + timeCalc.elapsed(times.sleepStart);
 
     }
 
+}
+
+function updateSleepInfo(){
+
+    if (!times.sleeping){
+     
+        btIcon.image = "icons/btn_combo_sleep.png";
+        btIconPressed.image = "icons/btn_combo_sleep.png";
+        iconStatusSleep.image = "icons/baby_awake_status.png";
+        timeSleepStart.text = timeCalc.hoursMin(times.sleepStart) + " - " + timeCalc.hoursMin(times.sleepEnd);
+        elapsedSleep.text = "for " + timeCalc.elapsed(times.sleepEnd);
+
+    }
+    
 }
 
 function showInputMaskCorrection(type) {
@@ -318,7 +303,6 @@ function updateTimeEntry(type) {
             }
 
             //update screen
-            updateSleepText();
             updateSleepLog();
 
             break;
@@ -338,7 +322,6 @@ function updateTimeEntry(type) {
             }
 
             //update screen
-            updateSleepText();
             updateSleepLog();
 
             break;
