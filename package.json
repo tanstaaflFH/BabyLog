@@ -1,12 +1,4 @@
 {
-  "name": "babylog",
-  "version": "0.1.0",
-  "private": true,
-  "license": "UNLICENSED",
-  "devDependencies": {
-    "@fitbit/sdk": "~1.0.2",
-    "@fitbit/sdk-cli": "^1.0.1"
-  },
   "fitbit": {
     "appUUID": "6ee38fe2-5574-4470-a3ad-7a4b9445d4dc",
     "appType": "app",
@@ -16,10 +8,25 @@
     "requestedPermissions": [],
     "buildTargets": [
       "higgs",
-      "meson"
+      "meson",
+      "gemini",
+      "mira"
     ],
-    "i18n": {}
+    "i18n": {
+      "en": {
+        "name": "BabyLog"
+      }
+    },
+    "defaultLanguage": "en-US"
   },
+  "devDependencies": {
+    "@fitbit/sdk": "~4.0.0",
+    "@fitbit/sdk-cli": "^1.0.1"
+  },
+  "name": "babylog",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "build": "fitbit-build",
     "debug": "fitbit"
