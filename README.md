@@ -62,6 +62,7 @@ The last ten log entries are stored on the device:
 I wrote this very quickly for exactly my needs.
 If you want further or modified behaviour, feel free to built on my simple code that can be found at
 [GitHub](https://github.com/tanstaaflFH/BabyLog)
+Support me with a donation at https://paypal.me/FHDevelopment?locale.x=de_DE if you like.
 
 ## Changelog
 
